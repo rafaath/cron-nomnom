@@ -1,0 +1,17 @@
+{
+    "name": "vercel-cron-job",
+    "version": "1.0.0",
+    "description": "A Vercel project with a scheduled function to hit an endpoint every 14 minutes.",
+    "main": "api/hit-endpoint.js",
+    "scripts": {
+      "start": "vercel dev"
+    },
+    "dependencies": {
+      "node-fetch": "^3.3.2"
+    },
+    "devDependencies": {},
+    "keywords": ["vercel", "cron", "serverless", "scheduled function"],
+    "author": "Your Name",
+    "license": "MIT"
+  }
+  
