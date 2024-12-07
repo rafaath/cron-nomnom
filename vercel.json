@@ -1,9 +1,10 @@
 {
-    "functions": {
-      "api/hit-endpoint.js": {
-        "runtime": "edge",
+    "version": 2,
+    "crons": [
+      {
+        "path": "/api/hit-endpoint",
         "schedule": "*/14 * * * *"
       }
-    }
+    ]
   }
   
