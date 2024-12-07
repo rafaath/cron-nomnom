@@ -1,8 +1,8 @@
 {
     "functions": {
       "api/hit-endpoint.js": {
-        "schedule": "*/14 * * * *",
-        "timeout": 10
+        "runtime": "edge",
+        "schedule": "*/14 * * * *"
       }
     }
   }

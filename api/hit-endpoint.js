@@ -1,22 +1,14 @@
-export default async function handler(req, res) {
+export default async function handler(request) {
     try {
-      const response = await fetch('https://menubot-backend.onrender.com/wake_up', {
-        method: 'GET', // or 'POST', etc., depending on your needs
-        headers: {
-          'Content-Type': 'application/json',
-          // Add any other headers if necessary
-        },
-      });
-  
+      const response = await fetch('https://menubot-backend.onrender.com/wake_up');
       if (!response.ok) {
-        throw new Error(`Error: ${response.statusText}`);
+        return new Response(JSON.stringify({ message: 'Failed to hit endpoint' }), { status: 500 });
       }
-  
       const data = await response.json();
-      res.status(200).json({ message: 'Endpoint hit successfully', data });
+      return new Response(JSON.stringify({ message: 'Endpoint hit successfully', data }), { status: 200 });
     } catch (error) {
       console.error(error);
-      res.status(500).json({ message: 'Failed to hit endpoint', error: error.message });
+      return new Response(JSON.stringify({ message: 'Failed to hit endpoint', error: error.message }), { status: 500 });
     }
   }
   
